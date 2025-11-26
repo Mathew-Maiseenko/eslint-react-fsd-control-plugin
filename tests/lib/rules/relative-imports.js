@@ -34,7 +34,6 @@ ruleTester.run('relative-imports', rule, {
 			filename: '/project/src/features/someFeature/index.js',
 			options: [{ aliases: ['@', '~'] }],
 		},
-
 		// Абсолютные импорты между разными слоями (разрешенные)
 		{
 			code: "import value from '@/shared/ui'",
@@ -51,14 +50,12 @@ ruleTester.run('relative-imports', rule, {
 			filename: '/project/src/features/someFeature/index.js',
 			options: [{ aliases: ['@', '~'] }],
 		},
-
 		// Абсолютные импорты внутри одного слоя но разных слайсов (разрешенные)
 		{
 			code: "import value from '@/features/otherFeature'",
 			filename: '/project/src/features/someFeature/index.js',
 			options: [{ aliases: ['@', '~'] }],
 		},
-
 		// Файлы вне структуры FSD (должны игнорироваться)
 		{
 			code: "import value from './somefile'",
